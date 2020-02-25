@@ -5,13 +5,8 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import List from "./components/List";
 import MovieList from "./components/MovieList";
-
 import ImprovedMovieList from "./components/ImprovedMovieList";
 
-
-
-
-const listItems = [<h1>1</h1>, <h1>2</h1>, <h1>3</h1>, <h1>4</h1>, <h1>5</h1>];
 
 const names = ["Anna", "Bob", "Sarah", "John"];
 
@@ -32,21 +27,18 @@ class App extends React.Component {
       <Navbar />
 
       <ImprovedMovieList />
+
       <MovieList />
 
-      {/* Example 1  */}
-      {/* {listItems} */}
-
-      {/* Example 2 - mapping over an array  */}
-      {
-        names.map( (nameStr, index) => {
-        return <h1 key={index} > {nameStr} </h1>;
-      })
-      }
-
-      {/* Example 3 - component that creates a list  */}
+      {/* EXample 2 - Component that creates a list */}
       <List cities={this.state.cities} />
 
+      {/* Example 1 - creating a list of elements out of an array */}
+      {
+        names.map( (nameStr, index) => {
+          return <h1 key={index} > {nameStr} </h1>;
+      })
+      }
     </div>
   );
 }
